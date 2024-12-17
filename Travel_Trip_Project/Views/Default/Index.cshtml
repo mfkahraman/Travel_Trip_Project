@@ -12,7 +12,7 @@
         <div class="wrap">
             <div class="banner">
                 <div class="indent">
-                    <h2 class="indent-left margin-bot">Plan the Easy Trip</h2>
+                    <h2 class="indent-left margin-bot">Tatil & Seyahat Bloğum</h2>
                     <div class="banner-left">
                         <div class="con-text">
                             <div class="grid1-img">
@@ -82,59 +82,19 @@
                         Dünyanın farklı köşelerinde kaybolmaya, yeni yerler keşfetmeye ve her anı dolu dolu yaşamaya ne dersiniz? Bu blogda, gezip gördüğüm şehirlerin sokaklarından kokular, tarihi mekanlardan hikayeler ve yerel lezzetlerden tatlar bulacaksınız. Roma'nın büyülü tarihinden Paris'in romantik atmosferine, Berlin'in enerjik sokaklarından Amsterdam'ın huzurlu kanallarına uzanan keyifli seyahat anılarımı sizlerle paylaşıyorum. Keşfetmeye hazır mısınız? O zaman valizlerinizi toplayın ve bu maceraya birlikte çıkalım!
                     </p>
                 </div>
+
+                @*PartialView Conbot*@
                 @Html.Action("ConBot", "Default")
+
                 <div class="grids" style="margin-top:20px">
                     <div class="box1">
+
+                        @*PartialView Top10*@
                         @Html.Action("Top10", "Default")
-                        <div class="padding1">
-                            <h4>Our Best Places</h4>
-                            <div class="box-left">
-                                <div class="bot-img">
-                                    <img src="~/Templates/Travel/images/pic3.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="bot-img">
-                                    <img src="~/Templates/Travel/images/pic7.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="bot-img">
-                                    <img src="~/Templates/Travel/images/pic8.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="box1-left">
-                                <div class="bot-img">
-                                    <img src="~/Templates/Travel/images/pic9.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc1">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="bot-img">
-                                    <img src="~/Templates/Travel/images/pic10.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc1">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                                <div class="bot-img">
-                                    <img src="~/Templates/Travel/images/pic3.jpg" alt="" />
-                                </div>
-                                <div class="bot-desc1">
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
+
+                        @*PartialView BestPlaces*@
+                        @Html.Action("BestPlaces","Default")
+
                         <div class="clear"></div>
                     </div>
                 </div>

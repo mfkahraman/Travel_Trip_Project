@@ -96,3 +96,79 @@
     margin-top: 10px; /* Üstten boşluk bırakır */
     margin-bottom: 10px; /* Alttan boşluk bırakır */
 }
+
+/*Best Places*/
+/* Best Places Container */
+.custom-best-places {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.custom-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Kartların Bulunduğu Alan */
+.custom-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Ortala */
+    gap: 20px; /* Kartlar arası boşluk */
+}
+
+/* Tekil Kart */
+.custom-place-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+    .custom-place-item:hover {
+        transform: translateY(-5px);
+    }
+
+/* Blog Görseli */
+.custom-place-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Blog Başlığı */
+.custom-place-title {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Blog Açıklaması */
+.custom-place-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Devamını Oku Butonu */
+.custom-read-more-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+    .custom-read-more-btn:hover {
+        background-color: #0056b3;
+    }

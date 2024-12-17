@@ -30,5 +30,11 @@ namespace Travel_Trip_Project.Controllers
             return PartialView(values);
         }
 
+        public PartialViewResult BestPlaces()
+        {
+            var values = db.Blogs.Take(6).ToList();
+            return PartialView(values);
+        }
+
     }
 }
