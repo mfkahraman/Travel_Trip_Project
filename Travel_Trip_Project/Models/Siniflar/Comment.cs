@@ -13,6 +13,7 @@ namespace Travel_Trip_Project.Models.Siniflar
         public string UserName { get; set; }
         public string Mail { get; set; }
         public string Context { get; set; }
-        public Blog Blog { get; set; }
+        public int BlogId { get; set; }
+        public virtual Blog Blog { get; set; }
     }
 }
