@@ -139,7 +139,7 @@
     <Compile Include="Models\Siniflar\BlogYorum.cs" />
     <Compile Include="Models\Siniflar\HomePage.cs" />
     <Compile Include="Models\Siniflar\Blog.cs" />
-    <Compile Include="Models\Siniflar\Context.cs" />
+    <Compile Include="Models\Siniflar\TravelDbContext.cs" />
     <Compile Include="Models\Siniflar\About.cs" />
     <Compile Include="Models\Siniflar\Contact.cs" />
     <Compile Include="Models\Siniflar\Comment.cs" />
@@ -162,6 +162,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\custom.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -227,12 +228,20 @@
     <Content Include="Templates\Travel\js\jquery.min.js" />
     <Content Include="Templates\Travel\js\responsiveslides.min.js" />
     <Content Include="Templates\Travel\w3layouts-License.txt" />
-    <Content Include="wwwroot\images\amsterdam2.jpg" />
-    <Content Include="wwwroot\images\berlin3.jpg" />
-    <Content Include="wwwroot\images\indianSpices.jpg" />
-    <Content Include="wwwroot\images\paris2.jpg" />
-    <Content Include="wwwroot\images\rome3.jpg" />
+    <Content Include="wwwroot\images\amsterdam.jpg" />
+    <Content Include="wwwroot\images\barselona.jpg" />
+    <Content Include="wwwroot\images\berlin.jpg" />
+    <Content Include="wwwroot\images\budapeste.jpg" />
+    <Content Include="wwwroot\images\delhi.jpg" />
+    <Content Include="wwwroot\images\kahire.jpg" />
+    <Content Include="wwwroot\images\londra.jpg" />
+    <Content Include="wwwroot\images\moskova.jpg" />
+    <Content Include="wwwroot\images\paris.jpg" />
+    <Content Include="wwwroot\images\prag.jpg" />
+    <Content Include="wwwroot\images\rome.jpg" />
+    <Content Include="wwwroot\images\tokyo.jpg" />
     <Content Include="wwwroot\images\Travel.png" />
+    <Content Include="wwwroot\images\viyana.jpg" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -261,6 +270,8 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\BlogDetail.cshtml" />
+    <Content Include="Views\Default\ConBot.cshtml" />
+    <Content Include="Views\Default\Top10.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -10,7 +10,7 @@ namespace Travel_Trip_Project.Controllers
     public class AboutController : Controller
     {
         // GET: About
-        private readonly Context c = new Context();
+        private readonly TravelDbContext c = new TravelDbContext();
         public ActionResult Index()
         {
             var degerler = c.Abouts.ToList();

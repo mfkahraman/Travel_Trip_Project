@@ -1,0 +1,25 @@
+﻿@model List<Travel_Trip_Project.Models.Siniflar.Blog>
+
+<div class="my-con-bot">
+    @foreach (var blog in Model)
+    {
+        <div class="my-blog-item">
+            <div class="my-blog-image">
+                <img src="@blog.BlogImage" alt="@blog.Title" />
+            </div>
+            <div class="my-blog-content">
+                <h4>@blog.Title</h4>
+                <p>@blog.Description.Substring(0, Math.Min(blog.Description.Length, 100))...</p>
+
+                <!-- Gidilen Tarih Bilgisi -->
+                <p class="gezdim-tarih"><strong>Gezdiğim Tarih:</strong> @blog.Date.ToString("dd MMMM yyyy")</p>
+
+                <p>
+                    <a href="@Url.Action("BlogDetail", "Blog", new { id = blog.ID })" class="my-custom-read-button">
+                        Devamını Oku >>
+                    </a>
+                </p>
+            </div>
+        </div>
+    }
+</div>

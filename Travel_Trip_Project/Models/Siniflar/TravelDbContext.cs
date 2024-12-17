@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace Travel_Trip_Project.Models.Siniflar
 {
-    public class Context : DbContext
+    public class TravelDbContext : DbContext
     {
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Adress> Adresses { get; set; }

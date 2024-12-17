@@ -1,0 +1,98 @@
+﻿/* ConBot Bölümü Ana Stil */
+.my-con-bot {
+    display: flex;
+    flex-wrap: wrap; /* Sütunlar taşarsa alta geçsin */
+    gap: 20px; /* Sütunlar arasında boşluk bırakır */
+    justify-content: space-between; /* Yatayda sütunları yayar */
+}
+
+/* Blog Öğesi Stil */
+.my-blog-item {
+    flex: 1 1 calc(33.333% - 20px); /* 3 sütun oluşturur ve aralarında boşluk bırakır */
+    box-sizing: border-box; /* Padding ve border dahil genişlik hesaplaması */
+    border: 1px solid #ddd; /* Hafif çerçeve */
+    border-radius: 8px; /* Köşeleri yuvarlak yapar */
+    overflow: hidden; /* Taşmaları önler */
+    text-align: center; /* İçeriği ortalar */
+    background: #fff; /* Arka plan rengi */
+    transition: transform 0.3s ease; /* Hover efekti için */
+}
+
+    .my-blog-item:hover {
+        transform: translateY(-5px); /* Hover'da yukarı kalkma efekti */
+    }
+
+/* Resim Bölgesi */
+.my-blog-image img {
+    width: 100%; /* Resimleri tam genişliğe sığdırır */
+    height: 200px; /* Sabit yükseklik ayarı */
+    object-fit: cover; /* Resmi kırparak alanı doldurur */
+    display: block; /* Boşlukları kaldırır */
+}
+
+/* İçerik Bölgesi */
+.my-blog-content {
+    padding: 15px;
+}
+
+    /* Blog başlık stilini güncelle */
+    .my-blog-content h4 {
+        margin: 10px 0;
+        font-size: 18px; /* Başlık fontunu büyütüyoruz */
+        color: #333; /* Başlık rengi */
+        font-family: 'Arial', sans-serif; /* Yazı tipi değiştirme */
+        font-weight: bold; /* Kalın yapıyoruz */
+        border-bottom: 2px solid #c0392b; /* Başlık altına kırmızı çizgi ekliyoruz */
+        padding-bottom: 5px; /* Alt çizgiyle başlık arasına boşluk bırakıyoruz */
+    }
+
+
+    .my-blog-content p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+
+    .my-blog-content .my-read {
+        font-weight: bold;
+        color: #fff; /* Beyaz renk */
+        background-color: #c0392b; /* Kırmızı tonlarında arka plan */
+        padding: 8px 12px; /* Buton boyutunu ayarlar */
+        border-radius: 4px; /* Köşeleri yuvarlatır */
+        text-decoration: none; /* Alt çizgiyi kaldırır */
+        display: inline-block; /* Linki buton gibi gösterir */
+        transition: background-color 0.3s ease; /* Hover efekti için geçiş efekti */
+    }
+
+        .my-blog-content .my-read:hover {
+            background-color: #a93226; /* Hover için daha koyu kırmızı */
+            color: #f5f5f5; /* Hafif gri-beyaz yazı */
+        }
+
+/* Custom Buton */
+.my-custom-read-button {
+    font-weight: bold;
+    color: #fff; /* Beyaz yazı rengi */
+    background-color: #c0392b; /* Kırmızı tonlarında arka plan */
+    padding: 8px 12px; /* Buton boyutunu ayarlar */
+    border-radius: 4px; /* Köşeleri yuvarlatır */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    display: inline-block; /* Linki buton gibi gösterir */
+    transition: background-color 0.3s ease; /* Hover efekti için geçiş efekti */
+}
+
+    .my-custom-read-button:hover {
+        background-color: #a93226; /* Hover için daha koyu kırmızı */
+        color: #f5f5f5; /* Yazı rengini hafif gri-beyaz yapar */
+    }
+
+/* Gezdiğim Tarih Stili */
+.gezdim-tarih {
+    font-family: 'Arial', sans-serif; /* Farklı bir font seçebilirsiniz */
+    font-weight: bold; /* Kalın yazı */
+    font-size: 16px; /* Yazı boyutunu belirleyebilirsiniz */
+    color: #2c3e50; /* Yazı rengi */
+    margin-top: 10px; /* Üstten boşluk bırakır */
+    margin-bottom: 10px; /* Alttan boşluk bırakır */
+}

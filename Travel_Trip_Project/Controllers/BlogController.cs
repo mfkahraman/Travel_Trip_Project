@@ -9,7 +9,7 @@ namespace Travel_Trip_Project.Controllers
 {
     public class BlogController : Controller
     {
-        private readonly Context db = new Context();
+        private readonly TravelDbContext db = new TravelDbContext();
         private readonly BlogYorum by = new BlogYorum();
         public ActionResult Index()
         {
