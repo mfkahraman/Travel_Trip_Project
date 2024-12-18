@@ -59,15 +59,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </li>
                     </ul>
                 }
-                <div class="content-form">
-                    <h3>Yorum Yazın</h3>
-                    <form method="post">
-                        <input type="text" placeholder="Adınız" required />
-                        <input type="text" placeholder="Mail Adresiniz" required />
-                        <textarea placeholder="Yorumunuz"></textarea>
-                        <input type="submit" value="Gönder" />
-                    </form>
-                </div>
+                @Html.Action("AddComment", "Blog", new { blogID = Model.Blogs.FirstOrDefault()?.ID })
             </div>
 
             <div class="col-md-4 side-content">

@@ -34,5 +34,26 @@ namespace Travel_Trip_Project.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public PartialViewResult AddComment(int blogID)
+        {
+            ViewBag.BlogID = blogID;
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult AddComment(Comment entity)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Comments.Add(entity);
+                db.SaveChanges();
+                return RedirectToAction("BlogDetail", new { id = entity.BlogId });
+            }
+            ViewBag.BlogID = entity.BlogId;
+            return PartialView(entity);
+        }
+
     }
 }

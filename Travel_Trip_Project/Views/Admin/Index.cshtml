@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Blog Listesi</h2>
+<h2 style="margin-top:20px">Blog Listesi</h2>
 <br />
 
 <table class="table table-bordered">
@@ -23,7 +23,7 @@
                 <th>@item.ID</th>
                 <td>@item.Title</td>
                 <td>
-                    <a href="/Admin/DeleteBlog/@item.ID" class="btn btn-danger">Sil</a>
+                    <a href="/Admin/DeleteBlog/@item.ID" class="btn btn-danger" onclick="return confirm('Emin misiniz?')">Sil</a>
                     <a href="/Admin/UpdateBlog/@item.ID" class="btn btn-warning">Güncelle</a>
                 </td>
             </tr>

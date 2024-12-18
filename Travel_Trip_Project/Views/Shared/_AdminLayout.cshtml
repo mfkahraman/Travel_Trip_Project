@@ -1,38 +1,193 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
 <!DOCTYPE html>
-<html>
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Yönetim Paneli</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/custom.css" rel="stylesheet" />
+    <style>
+        /* Sidebar styles */
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background-color: #001f54;
+            padding-top: 20px;
+            color: #fff;
+            transition: width 0.3s; /* Smooth transition for sidebar */
+        }
+
+        .sidebar-header {
+            padding: 15px;
+            text-align: center;
+            background-color: #000000; /* Dark blue color */
+            font-size: 35px;
+            font-weight: bold;
+            color: #fca311; /* Lighter yellow color */
+        }
+
+        .sidebar ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+            .sidebar ul li {
+                padding: 15px 20px;
+            }
+
+                .sidebar ul li a {
+                    text-decoration: none;
+                    color: #adb5bd;
+                    display: block;
+                    font-size: 26px;
+                    padding: 10px 20px;
+                    border-radius: 4px;
+                    transition: background-color 0.3s, padding-left 0.3s; /* Adding transition for hover */
+                }
+
+                    .sidebar ul li a:hover {
+                        background-color: #e03e3e;
+                        color: #fff;
+                        padding-left: 30px; /* Slightly indented on hover */
+                    }
+
+        /* Content area styles */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            background-color: #212529;
+            color: #fff; /* Ensure text is readable */
+            transition: margin-left 0.3s;
+        }
+
+        header {
+            background-color: #d9534f; /* Dark red background for header */
+            color: #fff;
+            padding: 20px 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+            header h2 {
+                margin: 0;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+        main {
+            padding-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Button Styles for Larger Buttons */
+        .btn {
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+        }
+
+            .btn-secondary:hover {
+                background-color: #5a6268;
+            }
+
+        /* Table styles */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+            table th,
+            table td {
+                text-align: left;
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                color: #f4f4f4; /* Lighter color for table text */
+            }
+
+            table th {
+                background-color: #e67e22; /* Dark orange background for table headers */
+                color: #d35400; /* Dark orange color for text */
+                font-weight: bold;
+            }
+
+            table tbody tr:hover {
+                background-color: #343a40;
+            }
+        /* Modal styling */
+        .modal-content {
+            background-color: #495057;
+            color: #fff;
+        }
+    </style>
+</head>
+
 <body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h4>Admin Paneli</h4>
+            </div>
+            <ul>
+                <li><a href="/Admin/Index">Bloglar</a></li>
+                <li><a href="/Comment/Index">Yorumlar</a></li>
+                <li><a href="/Admin/Contact">İletişim</a></li>
+                <li><a href="/Admin/About">Hakkımda</a></li>
+                <li><a href="/Default/Index">Siteye Git</a></li>
+                <li><a href="/Login/Logout">Çıkış Yap</a></li>
+            </ul>
+        </nav>
 
-    <!-- Sidebar -->
-    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:15%">
-        <h3 class="w3-bar-item">Menü</h3>
-        <a href="/Admin/Index" class="w3-bar-item w3-button">Bloglar</a>
-        <a href="/Comment/Index" class="w3-bar-item w3-button">Yorumlar</a>
-        <a href="/Admin/Contact" class="w3-bar-item w3-button">İletişim</a>
-        <a href="/Admin/About" class="w3-bar-item w3-button">Hakkımda</a>
-        <a href="/Default/Index" class="w3-bar-item w3-button">Siteye Git</a>
+        <!-- Main Content -->
+        <div class="content flex-grow-1">
+            <!-- Page Content -->
+            <main>
+                @RenderBody()
+            </main>
+        </div>
     </div>
 
-    <!-- Page Content -->
-    <div style="margin-left:15%">
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-        <div class="w3-container w3-teal">
-            <h1>Admin Yönetim Paneli</h1>
-        </div>
+    @RenderSection("Scripts", required: false)
 
-        <div class="w3-container">
-            @RenderBody()
-        </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var commentModal = new bootstrap.Modal(document.getElementById('commentModal'));
 
-    </div>
-
+            document.querySelectorAll('a[data-bs-toggle="modal"]').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var comment = button.getAttribute('data-context');
+                    document.getElementById('modalCommentContent').textContent = comment;
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>

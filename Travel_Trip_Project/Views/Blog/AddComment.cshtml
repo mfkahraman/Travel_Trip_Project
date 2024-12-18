@@ -1,0 +1,21 @@
+﻿@model Travel_Trip_Project.Models.Siniflar.Comment
+
+<div class="content-form">
+    <h3>Yorum Yazın</h3>
+    @using (Html.BeginForm("AddComment", "Blog", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.HiddenFor(x => x.BlogId, new { @Value = ViewBag.BlogID })
+            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", placeholder = "Adınız", required = "required" })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", placeholder = "Mail Adresiniz", required = "required" })
+        </div>
+        <div class="form-group">
+            @Html.TextAreaFor(x => x.Context, new { @class = "form-control", placeholder = "Yorumunuz", rows = 4 })
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Gönder" class="btn btn-primary" />
+        </div>
+    }
+</div>
