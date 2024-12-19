@@ -172,3 +172,79 @@
     .custom-read-more-btn:hover {
         background-color: #0056b3;
     }
+
+
+/* custom.css */
+
+/* Container for the entire contact section */
+.my-contact {
+    padding: 40px 0;
+}
+
+/* Wrapper for the content */
+.my-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Top section with heading and description */
+.my-contact-top {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+    .my-contact-top h3 {
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .my-contact-top p {
+        font-size: 16px;
+        color: #666;
+    }
+
+/* Form container */
+.my-form {
+    margin-top: 20px;
+}
+
+    /* Each form field container */
+    .my-form div {
+        margin-bottom: 15px;
+    }
+
+    /* Input and textarea fields */
+    .my-form input.my-textbox,
+    .my-form textarea.my-textbox {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    /* Textarea field for message */
+    .my-form textarea.my-textbox {
+        height: 150px;
+    }
+
+    /* Submit button style */
+    .my-form button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        display: block;
+        width: 100%;
+    }
+
+        /* Hover effect for submit button */
+        .my-form button:hover {
+            background-color: #45a049;
+        }

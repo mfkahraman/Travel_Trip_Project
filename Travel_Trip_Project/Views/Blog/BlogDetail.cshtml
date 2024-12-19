@@ -1,91 +1,137 @@
 ﻿@model Travel_Trip_Project.Models.Siniflar.BlogYorum
 @{
-    ViewBag.Title = "BlogDetail";
-    Layout = "~/Views/Shared/_TestLayout.cshtml";
+    ViewBag.Title = "Blog Detail";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
     <link href="~/Templates/blog/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/Templates/blog/css/style.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
-	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!----webfonts---->
-    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
-    <!----//webfonts---->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <!--end slider -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .blog-detail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .blog-image {
+            flex: 1 1 40%;
+            max-width: 40%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+            .blog-image img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+        .blog-content {
+            flex: 1 1 58%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+            .blog-content h1 {
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 15px;
+            }
+
+            .blog-content p {
+                font-size: 16px;
+                color: #666;
+                line-height: 1.6;
+            }
+
+        .comments-section {
+            margin-top: 10px;
+        }
+
+            .comments-section h2 {
+                font-size: 30px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+        .comment {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+            .comment h3 {
+                font-size: 14px;
+                font-weight: bold;
+                margin: 0;
+                color: #333;
+            }
+
+            .comment p {
+                font-size: 14px;
+                color: #555;
+                margin: 5px 0 0;
+            }
+    </style>
 </head>
 <body>
-    <!---header---->
-    <div class="header">
-    </div>
-    <!--/header-->
-    <div class="single">
-        <div class="container">
-            <div class="col-md-8 single-main">
-                @foreach (var item in Model.Blogs)
+    <div class="container">
+        <!-- Blog Detay -->
+        <div class="blog-detail-container">
+            @* Blog detayını gösteren kısım *@
+            @if (Model.Blogs != null && Model.Blogs.Any())
+            {
+                var blog = Model.Blogs.FirstOrDefault(); // İlk blogu al
+                if (blog != null)
                 {
-                    <div class="single-grid">
-                        <img src="@item.BlogImage" alt="" style="margin-bottom:20px" />
-                        <h2>@item.Title</h2>
-                        <p>
-                            @item.Description
-                        </p>
+                    <div class="blog-image">
+                        <img src="@blog.BlogImage" alt="Blog Görseli" />
+                    </div>
+                    <div class="blog-content">
+                        <h1>@blog.Title</h1>
+                        <p>@blog.Description</p>
                     </div>
                 }
-                @foreach (var item in Model.Comments)
-                {
-                    <ul class="comment-list">
-                        <li>
-                            <img src="~/Templates/blog/images/avatar.png" class="img-responsive" alt="">
-                            <div class="desc">
-                                <h3>Kullanıcı Adı: @item.UserName</h3>
-                                <p>@item.Context</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-                    </ul>
-                }
-                @Html.Action("AddComment", "Blog", new { blogID = Model.Blogs.FirstOrDefault()?.ID })
-            </div>
+            }
+        </div>
 
-            <div class="col-md-4 side-content">
-                <div class="recent">
-                    <h3>RECENT POSTS</h3>
-                    <ul>
-                        <li><a href="#">Aliquam tincidunt mauris</a></li>
-                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-                        <li><a href="#">Nunc dignissim risus consecu</a></li>
-                        <li><a href="#">Cras ornare tristiqu</a></li>
-                    </ul>
-                </div>
-                <div class="comments">
-                    <h3>RECENT COMMENTS</h3>
-                    <ul>
-                        <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
-                        <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
-                        <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="clearfix"></div>
+        <!-- Yorumlar -->
+        <div class="comments-section">
+            <h2>Yorumlar</h2>
+            @if (Model.Comments != null && Model.Comments.Any())
+            {
+                foreach (var comment in Model.Comments)
+                {
+                    <div class="comment">
+                        <h3>@comment.UserName (@comment.BlogId)</h3>
+                        <p>@comment.Context</p>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Henüz yorum yok. Yorum yapan ilk kişi olun!</p>
+            }
         </div>
     </div>
 </body>
 </html>
-
-
-

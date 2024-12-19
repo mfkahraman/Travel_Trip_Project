@@ -131,10 +131,15 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412190059069_upd1.cs" />
+    <Compile Include="Migrations\202412190059069_upd1.Designer.cs">
+      <DependentUpon>202412190059069_upd1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Siniflar\Admin.cs" />
@@ -142,6 +147,8 @@
     <Compile Include="Models\Siniflar\BlogYorum.cs" />
     <Compile Include="Models\Siniflar\HomePage.cs" />
     <Compile Include="Models\Siniflar\Blog.cs" />
+    <Compile Include="Models\Siniflar\Hotel.cs" />
+    <Compile Include="Models\Siniflar\Restaurant.cs" />
     <Compile Include="Models\Siniflar\TravelDbContext.cs" />
     <Compile Include="Models\Siniflar\About.cs" />
     <Compile Include="Models\Siniflar\Contact.cs" />
@@ -219,7 +226,6 @@
     <Content Include="Templates\Travel\images\img4.jpg" />
     <Content Include="Templates\Travel\images\key.png" />
     <Content Include="Templates\Travel\images\link1-bg.gif" />
-    <Content Include="Templates\Travel\images\logo.png" />
     <Content Include="Templates\Travel\images\pic.jpg" />
     <Content Include="Templates\Travel\images\pic1.jpg" />
     <Content Include="Templates\Travel\images\pic10.jpg" />
@@ -270,8 +276,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_TestLayout.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\About.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
@@ -289,6 +294,7 @@
     <Content Include="Templates\Login\fonts\Asap-Regular.ttf" />
     <Content Include="Templates\Login\fonts\Audiowide-Regular.ttf" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -319,6 +325,11 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202412190059069_upd1.resx">
+      <DependentUpon>202412190059069_upd1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

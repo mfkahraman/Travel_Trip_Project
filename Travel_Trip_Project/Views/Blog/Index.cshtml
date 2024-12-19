@@ -1,7 +1,7 @@
 ﻿@model Travel_Trip_Project.Models.Siniflar.BlogYorum
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_TestLayout.cshtml";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
 <!DOCTYPE HTML>
@@ -11,59 +11,75 @@
     <link href="~/Templates/blog/css/style.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Personal Blog Responsive web template" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!----webfonts---->
-    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
-    <!----//webfonts---->
-</head>
-<body>
-    <!---header---->
-    <div class="header">
-        <div class="container">
-            <!---start-top-nav---->
-            <div class="clearfix"></div>
-            <!---//End-top-nav---->
-        </div>
-    </div>
-    <!--/header-->
-    <div class="single">
-        <div class="container">
-            <div>
-                <div class="col-md-8 single-main">
-                    @foreach (var item in Model.Blogs)
-                    {
-                        <div class="single-grid">
-                            <img src="@item.BlogImage" alt="" height="600" width="1000" />
-                            <h1><a href="/Blog/BlogDetail/@item.ID" style="display: inline-block; margin-top: 10px">@item.Title</a></h1>
-                        </div>
-                        <br /><br /><br /><br />
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .blog-card {
+            width: calc(50% - 10px); /* İki blog için uygun genişlik */
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+        }
+
+            .blog-card img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                margin-bottom: 15px;
+            }
+
+            .blog-card h1 {
+                font-size: 18px;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 10px;
+            }
+
+                .blog-card h1 a {
+                    text-decoration: none;
+                    color: #a2365a;
+                    transition: color 0.3s;
+                }
+
+                    .blog-card h1 a:hover {
+                        color: #6e1e3d;
                     }
 
+            .blog-card p {
+                font-size: 14px;
+                color: #666;
+                margin: 0;
+                line-height: 1.5;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="blog-container">
+            @foreach (var item in Model.Blogs)
+            {
+                <div class="blog-card">
+                    <img src="@item.BlogImage" alt="Blog Görseli" />
+                    <h1><a href="/Blog/BlogDetail/@item.ID">@item.Title</a></h1>
+                    <p>
+                        @item.Description.Substring(0, Math.Min(150, item.Description.Length))...
+                    </p>
                 </div>
-            </div>
-
-            <div class="col-md-4 side-content">
-                <div class="recent">
-                    <h3>Son Bloglar</h3>
-                    <ul>
-                        @foreach (var item in ViewBag.LastBLogs)
-                        {
-                            <li><a href="/Blog/BlogDetail/@item.ID">@item.Title</a></li>
-                        }
-                    </ul>
-                </div>
-                <div class="comments">
-                    <h3>Son Yorumlar</h3>
-                    <ul>
-                        <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
-                        <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
-                        <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="clearfix"></div>
+            }
         </div>
     </div>
 </body>

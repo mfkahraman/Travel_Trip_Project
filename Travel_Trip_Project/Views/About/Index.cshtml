@@ -2,17 +2,17 @@
 @model List<About> 
 @{
     ViewBag.Title = "About";
-    Layout = "~/Views/Shared/_TestLayout.cshtml";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
 <div class="content">
     <div class="wrap">
         <div class="about">
-            <h3>Hakkımızda</h3>
+            <h3>Hakkımda</h3>
             @foreach (var item in Model)
             {
-            <img src="@item.PhotoUrl" alt="" />
             <p>@item.Description</p>
+            <img  src="@item.PhotoUrl" alt="" />
             }
         </div>
     </div>
