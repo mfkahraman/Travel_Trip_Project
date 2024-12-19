@@ -53,6 +53,12 @@
       <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -133,6 +139,7 @@
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -140,6 +147,26 @@
     <Compile Include="Migrations\202412190059069_upd1.cs" />
     <Compile Include="Migrations\202412190059069_upd1.Designer.cs">
       <DependentUpon>202412190059069_upd1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412191025420_val_added.cs" />
+    <Compile Include="Migrations\202412191025420_val_added.Designer.cs">
+      <DependentUpon>202412191025420_val_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412191034569_longer_desc.cs" />
+    <Compile Include="Migrations\202412191034569_longer_desc.Designer.cs">
+      <DependentUpon>202412191034569_longer_desc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412191115297_url_req_removed.cs" />
+    <Compile Include="Migrations\202412191115297_url_req_removed.Designer.cs">
+      <DependentUpon>202412191115297_url_req_removed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412191131471_hotel_val_rem.cs" />
+    <Compile Include="Migrations\202412191131471_hotel_val_rem.Designer.cs">
+      <DependentUpon>202412191131471_hotel_val_rem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412191135121_hotel_val_add.cs" />
+    <Compile Include="Migrations\202412191135121_hotel_val_add.Designer.cs">
+      <DependentUpon>202412191135121_hotel_val_add.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Siniflar\Admin.cs" />
@@ -173,6 +200,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\custom.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -295,9 +323,13 @@
     <Content Include="Templates\Login\fonts\Audiowide-Regular.ttf" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Hotel\Index.cshtml" />
+    <Content Include="Views\Hotel\AddHotel.cshtml" />
+    <Content Include="Views\Hotel\UpdateHotel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="wwwroot\images\hotels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -329,6 +361,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202412190059069_upd1.resx">
       <DependentUpon>202412190059069_upd1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412191025420_val_added.resx">
+      <DependentUpon>202412191025420_val_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412191034569_longer_desc.resx">
+      <DependentUpon>202412191034569_longer_desc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412191115297_url_req_removed.resx">
+      <DependentUpon>202412191115297_url_req_removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412191131471_hotel_val_rem.resx">
+      <DependentUpon>202412191131471_hotel_val_rem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412191135121_hotel_val_add.resx">
+      <DependentUpon>202412191135121_hotel_val_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
