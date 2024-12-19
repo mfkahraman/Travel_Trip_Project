@@ -1,0 +1,125 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Travel_Trip_Project.Models.Siniflar.Comment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="margin-top:20px">Yorum Listesi</h2>
+<br />
+
+<style>
+    /* Sayfa numarası için stil */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        list-style: none;
+    }
+
+        .pagination li {
+            margin: 0 5px;
+        }
+
+            .pagination li a {
+                display: block;
+                padding: 8px 15px;
+                text-decoration: none;
+                background-color: #f8f9fa;
+                border: 1px solid #ddd;
+                color: #007bff;
+                border-radius: 5px;
+            }
+
+                .pagination li a:hover {
+                    background-color: #007bff;
+                    color: white;
+                }
+
+        .pagination .active a {
+            background-color: #007bff;
+            color: white;
+            border: 1px solid #007bff;
+        }
+
+        .pagination .disabled a {
+            background-color: #e9ecef;
+            color: #6c757d;
+            pointer-events: none;
+        }
+</style>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>KLLANICI ADI</th>
+            <th>MAİL</th>
+            <th>YORUM</th>
+            <th>İŞLEMLER</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>@item.Mail</td>
+                <td>
+                    @if (item.Context.Length > 100)
+                    {
+                        <span>@item.Context.Substring(0, 100)...</span>
+                        <a href="#" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#commentModal"
+                           data-context="@item.Context">Detay</a>
+                    }
+                    else
+                    {
+                        <span>@item.Context</span>
+                    }
+                </td>
+                <td>
+                    <a href="/AdminComment/DeleteComment/@item.ID" class="btn btn-danger" onclick="return confirm('Emin misiniz?')">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+
+
+<!-- Modal -->
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="commentModalLabel">Tam Yorum</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modalCommentContent">
+                <!-- Full comment will be dynamically inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var commentModal = new bootstrap.Modal(document.getElementById('commentModal'));
+
+            document.querySelectorAll('a[data-bs-toggle="modal"]').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var comment = button.getAttribute('data-context');
+                    document.getElementById('modalCommentContent').textContent = comment;
+                });
+            });
+        });
+    </script>
+}

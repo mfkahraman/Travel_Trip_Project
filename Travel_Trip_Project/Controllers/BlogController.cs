@@ -13,7 +13,7 @@ namespace Travel_Trip_Project.Controllers
         private readonly BlogYorum by = new BlogYorum();
         public ActionResult Index()
         {
-            by.Blogs = db.Blogs.ToList();
+            by.Blogs = db.Blogs.OrderByDescending(x=>x.Date).ToList();
             ViewBag.LastBlogs = db.Blogs.OrderByDescending(x=> x.ID).Take(5).ToList();
             return View(by);
         }

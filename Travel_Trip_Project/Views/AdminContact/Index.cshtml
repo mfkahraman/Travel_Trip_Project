@@ -1,0 +1,92 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Travel_Trip_Project.Models.Siniflar.Contact>
+
+@{
+    ViewBag.Title = "Gelen Mesajlar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">GELEN MESAJLAR</h2>
+<br />
+
+<style>
+    /* Sayfa numarası için stil */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        list-style: none;
+    }
+
+        .pagination li {
+            margin: 0 5px;
+        }
+
+            .pagination li a {
+                display: block;
+                padding: 8px 15px;
+                text-decoration: none;
+                background-color: #f8f9fa;
+                border: 1px solid #ddd;
+                color: #007bff;
+                border-radius: 5px;
+            }
+
+                .pagination li a:hover {
+                    background-color: #007bff;
+                    color: white;
+                }
+
+        .pagination .active a {
+            background-color: #28a745;
+            color: white;
+            border: 1px solid #28a745;
+        }
+
+        .pagination .disabled a {
+            background-color: #e9ecef;
+            color: #6c757d;
+            pointer-events: none;
+        }
+
+    .table img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    .table-responsive {
+        margin-top: 20px;
+    }
+</style>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th style="width: 10%;">GÖNDEREN</th>
+                <th style="width: 10%;">MAİL</th>
+                <th style="width: 10%;">KONU</th>
+                <th style="width: 60%;">MESAJ İÇERİĞİ</th>
+                <th style="width: 10%;">İŞLEMLER</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.NameSurname</td>
+                    <td>@item.Mail</td>
+                    <td>@item.Subject</td>
+                    <td>@item.Message</td>
+                    <td>
+                        <a href="/AdminContact/DeleteMessage/@item.ID" class="btn btn-danger" onclick="return confirm('Emin misiniz?')">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

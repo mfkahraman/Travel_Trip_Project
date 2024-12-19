@@ -1,0 +1,37 @@
+﻿@model Travel_Trip_Project.Models.Siniflar.Blog
+
+@{
+    ViewBag.Title = "UpdateBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Güncelle</h2>
+<br />
+
+<form class="form-group" method="post" enctype="multipart/form-data">
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Date, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+    <br />
+    @Html.ValidationMessageFor(x => x.Date, "", new { @class = "text-danger" })
+
+    <label>Görsel Seçin</label>
+    <input type="file" name="BlogImage" class="form-control" />
+    <br />
+    @Html.ValidationMessageFor(x => x.BlogImage, "", new { @class = "text-danger" })
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, 10, 1, new { @class = "form-control" })
+    <br />
+    @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+
+    <button class="btn btn-primary">Güncelle</button>
+</form>

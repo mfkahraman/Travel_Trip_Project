@@ -133,14 +133,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AboutController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminBlogController.cs" />
+    <Compile Include="Controllers\AdminContactController.cs" />
+    <Compile Include="Controllers\AdminRestaurantController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
-    <Compile Include="Controllers\CommentController.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\AdminCommentController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\HotelController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\AdminHotelController.cs" />
+    <Compile Include="Controllers\AdminLoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -167,6 +167,14 @@
     <Compile Include="Migrations\202412191135121_hotel_val_add.cs" />
     <Compile Include="Migrations\202412191135121_hotel_val_add.Designer.cs">
       <DependentUpon>202412191135121_hotel_val_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412191421177_url_val_removed.cs" />
+    <Compile Include="Migrations\202412191421177_url_val_removed.Designer.cs">
+      <DependentUpon>202412191421177_url_val_removed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412191422051_url_val_removed2.cs" />
+    <Compile Include="Migrations\202412191422051_url_val_removed2.Designer.cs">
+      <DependentUpon>202412191422051_url_val_removed2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Siniflar\Admin.cs" />
@@ -307,29 +315,36 @@
     <Content Include="Views\Shared\_MainLayout.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\About.cshtml" />
-    <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\BlogDetail.cshtml" />
     <Content Include="Views\Default\ConBot.cshtml" />
     <Content Include="Views\Default\Top10.cshtml" />
     <Content Include="Views\Default\BestPlaces.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\AddBlog.cshtml" />
-    <Content Include="Views\Admin\UpdateBlog.cshtml" />
+    <Content Include="Views\AdminBlog\Index.cshtml" />
+    <Content Include="Views\AdminBlog\AddBlog.cshtml" />
+    <Content Include="Views\AdminBlog\UpdateBlog.cshtml" />
     <Content Include="Views\Blog\AddComment.cshtml" />
-    <Content Include="Views\Comment\Index.cshtml" />
+    <Content Include="Views\AdminComment\Index.cshtml" />
     <Content Include="Templates\Login\fonts\Asap-Regular.ttf" />
     <Content Include="Templates\Login\fonts\Audiowide-Regular.ttf" />
-    <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Hotel\Index.cshtml" />
-    <Content Include="Views\Hotel\AddHotel.cshtml" />
-    <Content Include="Views\Hotel\UpdateHotel.cshtml" />
+    <Content Include="Views\AdminLogin\Login.cshtml" />
+    <Content Include="Views\AdminHotel\Index.cshtml" />
+    <Content Include="Views\AdminHotel\AddHotel.cshtml" />
+    <Content Include="Views\AdminHotel\UpdateHotel.cshtml" />
+    <Content Include="Views\Default\Contact.cshtml" />
+    <Content Include="Views\AdminRestaurant\Index.cshtml" />
+    <Content Include="Views\AdminRestaurant\AddRestaurant.cshtml" />
+    <Content Include="Views\AdminRestaurant\UpdateRestaurant.cshtml" />
+    <Content Include="Views\AdminContact\Index.cshtml" />
+    <Content Include="Views\Default\Hotels.cshtml" />
+    <Content Include="Views\Default\Restaurants.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="wwwroot\images\blogs\" />
     <Folder Include="wwwroot\images\hotels\" />
+    <Folder Include="wwwroot\images\restaurants\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -376,6 +391,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202412191135121_hotel_val_add.resx">
       <DependentUpon>202412191135121_hotel_val_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412191421177_url_val_removed.resx">
+      <DependentUpon>202412191421177_url_val_removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412191422051_url_val_removed2.resx">
+      <DependentUpon>202412191422051_url_val_removed2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,4 @@
-﻿@model Travel_Trip_Project.Models.Siniflar.BlogYorum
+﻿@model List<Travel_Trip_Project.Models.Siniflar.Restaurant>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -66,6 +66,7 @@
                 line-height: 1.5;
             }
 
+        /* Yeni stil ekle: Büyük puntolarla RESTORANLAR başlığı */
         h1 {
             font-size: 36px;
             font-weight: bold;
@@ -76,16 +77,16 @@
     </style>
 </head>
 <body>
-    <h1 style="margin-top:20px">BLOGLARIM</h1>
+    <h1 style="margin-top:20px">BEĞENDİĞİM RESTORANLAR</h1> <!-- Büyük puntolarla RESTORANLAR başlığı eklendi -->
     <div class="container">
         <div class="blog-container">
-            @foreach (var item in Model.Blogs)
+            @foreach (var item in Model)
             {
                 <div class="blog-card">
-                    <img src="@item.BlogImage" alt="Blog Görseli" />
-                    <h1><a href="/Blog/BlogDetail/@item.ID">@item.Title</a></h1>
+                    <img src="@item.ImageUrl" alt="Restoran Görseli" />
+                    <h1><a href="#">@item.Name</a></h1>
                     <p>
-                        @item.Description.Substring(0, Math.Min(150, item.Description.Length))...
+                        @item.Description
                     </p>
                 </div>
             }

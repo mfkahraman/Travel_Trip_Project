@@ -20,19 +20,19 @@
             top: 0;
             left: 0;
             bottom: 0;
-            background-color: #001f54;
+            background-color: #212529; /* Darker sidebar */
             padding-top: 20px;
             color: #fff;
-            transition: width 0.3s; /* Smooth transition for sidebar */
+            transition: width 0.3s;
         }
 
         .sidebar-header {
             padding: 15px;
             text-align: center;
-            background-color: #000000; /* Dark blue color */
+            background-color: #1f262b; /* Slightly darker for header */
             font-size: 35px;
             font-weight: bold;
-            color: #fca311; /* Lighter yellow color */
+            color: #fca311;
         }
 
         .sidebar ul {
@@ -48,29 +48,29 @@
                     text-decoration: none;
                     color: #adb5bd;
                     display: block;
-                    font-size: 26px;
+                    font-size: 20px;
                     padding: 10px 20px;
                     border-radius: 4px;
-                    transition: background-color 0.3s, padding-left 0.3s; /* Adding transition for hover */
+                    transition: background-color 0.3s, padding-left 0.3s;
                 }
 
                     .sidebar ul li a:hover {
                         background-color: #e03e3e;
                         color: #fff;
-                        padding-left: 30px; /* Slightly indented on hover */
+                        padding-left: 30px;
                     }
 
         /* Content area styles */
         .content {
             margin-left: 250px;
             padding: 20px;
-            background-color: #212529;
-            color: #fff; /* Ensure text is readable */
+            background-color: #181d23; /* Dark content background */
+            color: #fff;
             transition: margin-left 0.3s;
         }
 
         header {
-            background-color: #d9534f; /* Dark red background for header */
+            background-color: #c82333; /* Darker red for header */
             color: #fff;
             padding: 20px 30px;
             border-radius: 5px;
@@ -123,20 +123,21 @@
             table th,
             table td {
                 text-align: left;
-                padding: 10px;
-                border-bottom: 1px solid #ddd;
-                color: #f4f4f4; /* Lighter color for table text */
+                padding: 12px;
+                border-bottom: 1px solid #444;
+                color: #dcdcdc; /* Lighter color for table text */
             }
 
             table th {
-                background-color: #e67e22; /* Dark orange background for table headers */
-                color: #d35400; /* Dark orange color for text */
+                background-color: #e67e22; /* Dark orange background */
+                color: #d35400;
                 font-weight: bold;
             }
 
             table tbody tr:hover {
                 background-color: #343a40;
             }
+
         /* Modal styling */
         .modal-content {
             background-color: #495057;
@@ -153,14 +154,14 @@
                 <h4>Admin Paneli</h4>
             </div>
             <ul>
-                <li><a href="/Admin/Index">Bloglar</a></li>
-                <li><a href="/Comment/Index">Yorumlar</a></li>
-                <li><a href="/Hotel/Index">Oteller</a></li>
-                <li><a href="/Restaurant/Index">Restoranlar</a></li>
-                <li><a href="/Admin/Contact">İletişim</a></li>
-                <li><a href="/Admin/About">Hakkımda</a></li>
+                <li><a href="/AdminBlog/Index">Bloglar</a></li>
+                <li><a href="/AdminComment/Index">Yorumlar</a></li>
+                <li><a href="/AdminHotel/Index">Oteller</a></li>
+                <li><a href="/AdminRestaurant/Index">Restoranlar</a></li>
+                <li><a href="/AdminContact/Index">Gelen Mesajlar</a></li>
+                <li><a href="/AdminAbout/About">Hakkımda</a></li>
                 <li><a href="/Default/Index">Siteye Git</a></li>
-                <li><a href="/Login/Logout">Çıkış Yap</a></li>
+                <li><a href="/AdminLogin/Logout">Çıkış Yap</a></li>
             </ul>
         </nav>
 

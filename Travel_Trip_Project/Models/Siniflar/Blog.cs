@@ -22,7 +22,6 @@ namespace Travel_Trip_Project.Models.Siniflar
         [StringLength(1000, ErrorMessage = "Açıklama en fazla 500 karakter olabilir.")]
         public string Description { get; set; }
 
-        [StringLength(250, ErrorMessage = "Blog görseli URL'si en fazla 250 karakter olabilir.")]
         public string BlogImage { get; set; }
 
         public ICollection<Comment> Comments { get; set; }

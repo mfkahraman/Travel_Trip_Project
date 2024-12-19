@@ -1,0 +1,32 @@
+﻿@model Travel_Trip_Project.Models.Siniflar.Restaurant
+
+@{
+    ViewBag.Title = "Restoran Güncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Restoran Güncelle</h2>
+<br />
+
+<form class="form-group" method="post" enctype="multipart/form-data">
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    <label>Restoran Adı</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+
+    <label>Görsel Seçin</label>
+    <input type="file" name="BlogImage" class="form-control" />
+    <br />
+    @Html.ValidationMessageFor(x => x.ImageUrl, "", new { @class = "text-danger" })
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, 10, 1, new { @class = "form-control" })
+    <br />
+    @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+
+    <button class="btn btn-primary">Güncelle</button>
+</form>

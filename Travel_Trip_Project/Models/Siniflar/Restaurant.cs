@@ -19,7 +19,6 @@ namespace Travel_Trip_Project.Models.Siniflar
         [StringLength(1000, ErrorMessage = "Açıklama 500 karakterden fazla olamaz.")]
         public string Description { get; set; }
 
-        [Url(ErrorMessage = "Lütfen geçerli bir URL giriniz.")]
         public string ImageUrl { get; set; }
     }
 }

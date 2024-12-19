@@ -1,0 +1,127 @@
+﻿@model Travel_Trip_Project.Models.Siniflar.Contact
+
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>İletişim Sayfası</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+
+    @*Style*@
+    <style>
+        .social-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .social-links li {
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            font-size: 18px; /* Linklerin yazı boyutunu büyütmek için */
+            color: #007bff; /* Mavi renk */
+            text-decoration: none; /* Alt çizgiyi kaldırır */
+            font-weight: bold; /* Linklere kalın yazı stili verir */
+            transition: color 0.3s ease; /* Hover efekti için geçiş süresi */
+        }
+
+            .social-links a:hover {
+                color: #0056b3; /* Hover durumunda daha koyu mavi renk */
+            }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* Buton stilini özelleştir */
+        .submit-button {
+            background-color: #953F5A; /* Pembe renk */
+            color: white; /* Beyaz metin */
+            font-size: 18px; /* Daha büyük yazı boyutu */
+            padding: 15px 30px; /* Yatay ve dikey boşluklar */
+            border: none; /* Kenarlık yok */
+            border-radius: 5px; /* Yuvarlak köşeler */
+            cursor: pointer; /* Üzerine gelince imleç değişir */
+            transition: background-color 0.3s ease; /* Renk değişimi efekti */
+        }
+
+            /* Buton hover efekti */
+            .submit-button:hover {
+                background-color: #D84C9E; /* Daha koyu pembe renk */
+            }
+    </style>
+</head>
+<body>
+    @* Validation Summary (doğrulama hatalarını burada gösterir) *@
+    <div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="contact">
+        <div class="wrap">
+
+            <div class="social-links">
+                <div class="contact-top">
+                    <h3>İletişim Adreslerim</h3>
+                </div>
+                <ul>
+                    <li><a href="mailto:mfurkankahraman@gmail.com" target="_blank">E-posta Adresim</a></li>
+                    <li><a href="https://www.linkedin.com/in/mfkahraman/" target="_blank">LinkedIn Profilim</a></li>
+                    <li><a href="https://github.com/mfkahraman" target="_blank">Projelerime Githubda Göz atabilirsin</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-top">
+                <h3>Mesaj Gönder</h3>
+            </div>
+
+            <div class="form">
+                <form class="cmxform" id="contactForm" method="post" action="@Url.Action("SendMessage", "Default")">
+                    <div>
+                        <input type="text" name="NameSurname" class="textbox" placeholder="Adınız Soyadınız">
+                    </div>
+                    <div>
+                        <input type="text" name="Mail" class="textbox" placeholder="Mail Adresiniz">
+                    </div>
+                    <div>
+                        <input type="text" name="Subject" class="textbox" placeholder="Konu">
+                    </div>
+                    <div class="form1">
+                        <div>
+                            <textarea name="Message" placeholder="Mesajınız"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" name="Message" class="submit-button">Mesaj Gönder</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="clear"></div>
+
+            @* Success message (success message display) *@
+            @if (ViewBag.Message != null)
+            {
+                <div class="success-message">
+                    <p>@ViewBag.Message</p>
+                </div>
+            }
+
+            <div class="clear"></div>
+
+
+
+        </div>
+    </div>
+</body>
+</html>
